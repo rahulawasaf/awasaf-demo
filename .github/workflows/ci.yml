@@ -25,3 +25,11 @@ jobs:
       - name: Run basic validation
         run: |
           python -c "import app"
+      - name: Run SAST (Bandit)
+        run: |
+          pip install bandit
+          bandit -r . -ll
+      - name: Run SCA (Dependency Scan)
+        run: |
+          pip install safety
+          safety check
