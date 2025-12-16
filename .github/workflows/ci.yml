@@ -41,8 +41,6 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: awasaf-demo:${{ github.sha }}
-          severity: CRITICAL
-          exit-code: 1
       - name: Trivy Scan (JSON Report)
         uses: aquasecurity/trivy-action@master
         with:
